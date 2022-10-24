@@ -46,6 +46,7 @@ dependencies {
     implementation libs.maps.ktx.std
     implementation libs.maps.utils
     implementation libs.androidx.compose.ui.preview.tooling
+    implementation "androidx.compose.material3:material3:1.0.0-beta03"
     debugImplementation libs.androidx.compose.ui.tooling
 
     androidTestImplementation libs.androidx.test.core

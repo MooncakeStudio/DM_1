@@ -40,7 +40,7 @@ dependencies {
     implementation libs.kotlin
     implementation libs.maps.playservice
     implementation libs.maps.ktx.std
-
+    implementation "androidx.compose.material3:material3:1.0.0-beta03"
     testImplementation libs.test.junit
 
     androidTestImplementation libs.androidx.test.espresso
