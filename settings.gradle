@@ -1,16 +1,14 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-}
+enableFeaturePreview("VERSION_CATALOGS")
+
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
         google()
         mavenCentral()
+        jcenter() // Warning: this repository is going to shut down soon
     }
 }
-rootProject.name = "My Application"
+rootProject.name = "android-maps-compose"
 include ':app'
+include ':maps-compose'
+include ':maps-compose-widgets'
