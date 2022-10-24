@@ -9,6 +9,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+
         classpath libs.android.gradle.plugin
         classpath libs.maps.secrets.plugin
         classpath libs.kotlin.gradle.plugin

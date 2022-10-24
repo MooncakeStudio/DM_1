@@ -34,12 +34,8 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.material.Button
-import androidx.compose.material.ButtonDefaults
-import androidx.compose.material.CircularProgressIndicator
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Switch
-import androidx.compose.material.Text
+import androidx.compose.material.*
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -95,7 +91,7 @@ class BasicMapActivity : ComponentActivity() {
                     ) {
                         CircularProgressIndicator(
                             modifier = Modifier
-                                .background(MaterialTheme.colors.background)
+                                .background(MaterialTheme.colorScheme.secondary)
                                 .wrapContentSize()
                         )
                     }
@@ -170,8 +166,8 @@ fun GoogleMapView(
             )
             Circle(
                 center = circleCenter,
-                fillColor = MaterialTheme.colors.secondary,
-                strokeColor = MaterialTheme.colors.secondaryVariant,
+                fillColor = MaterialTheme.colorScheme.secondary,
+                strokeColor = MaterialTheme.colorScheme.secondary,
                 radius = 1000.0,
             )
             content()
@@ -270,9 +266,10 @@ private fun ZoomControls(
             Switch(
                 isCameraAnimationChecked,
                 onCheckedChange = onCameraAnimationCheckedChange,
-                modifier = Modifier.testTag("cameraAnimations"),
+                modifier = Modifier.testTag("cameraAnimations").background(MaterialTheme.colorScheme.secondary),
             )
-            Text(text = "Zoom Controls On?")
+            Text(text = "Zoom Controls On?",
+                color = MaterialTheme.colorScheme.secondary)
             Switch(
                 isZoomControlsEnabledChecked,
                 onCheckedChange = onZoomControlsCheckedChange
@@ -286,12 +283,12 @@ private fun MapButton(text: String, onClick: () -> Unit, modifier: Modifier = Mo
     Button(
         modifier = modifier.padding(4.dp),
         colors = ButtonDefaults.buttonColors(
-            backgroundColor = MaterialTheme.colors.onPrimary,
-            contentColor = MaterialTheme.colors.primary
+            backgroundColor = MaterialTheme.colorScheme.onPrimary,
+            contentColor = MaterialTheme.colorScheme.primary
         ),
         onClick = onClick
     ) {
-        Text(text = text, style = MaterialTheme.typography.body1)
+        Text(text = text, style = MaterialTheme.typography.titleSmall)
     }
 }
 
